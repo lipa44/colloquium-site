@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Коллоквиум</title>
+
+    <script>
+        let seconds;
+        let first_time_used = true;
+        let x;
+
+        function set_seconds(new_s) {
+            seconds = new_s;
+            document.getElementById("timer").innerHTML = new_s;
+        }
+
+        function use_set_interval() {
+            x = setInterval(function () {
+                seconds = document.getElementById("timer").innerHTML;
+
+                document.getElementById("timer").innerHTML = seconds;
+
+                if (seconds <= 0) {
+                    document.getElementById("button1").innerHTML = "Отчёт на почту, следующая.";
+                    seconds = 11;
+                    //clearInterval(x);
+                } else {
+                    seconds--;
+                    document.getElementById("timer").innerHTML = seconds;
+                }
+            }, 1000);
+        }
+
+        function stop_timer() {
+            clearInterval(x);
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<style>
+
+    #picture_rect {
+        width: 150px;
+        height: 150px;
+        background: url("cat.jpg") no-repeat;
+        background-size: 150px 150px;
+    }
+
+    body {
+        background: #90efd0;
+        background-size: 100%; /* Современные браузеры */
+        color: #000000;
+        overflow: hidden;
+    }
+
+    h2 {
+        border: 4px double black; /* Параметры границы */
+        background: #fc3; /* Цвет фона */
+        padding: 10px; /* Поля вокруг текста */
+    }
+
+    p {
+        border: 4px double black; /* Параметры границы */
+        background: #fc3; /* Цвет фона */
+        padding: 10px; /* Поля вокруг текста */
+    }
+
+    button {
+        height: 50px;
+        display: block;
+        position: relative;
+        border: 1px solid white;
+        margin: 0 auto;
+        background: #ffcc33;
+    }
+
+</style>
+
+<h2 style=" text-align: center; font-size: 60px; font-family: 'Comic Sans MS',monospace">Коллоквиум №4</h2>
+
+<p style=" text-align: center; font-size: 40px; font-family: 'Comic Sans MS',monospace" id="button1"> Можешь рискнуть,
+    если дохуя смелый)</p>
+
+<button style="border-radius: 10px; border: 10px; font-size: 25px; margin-left: 600px;" type="button"
+        onclick='document.getElementById("button1").innerHTML = on_click_button(this); set_seconds(11); if (first_time_used) {use_set_interval(); first_time_used = false;}'>
+    Следующий вопрос
+</button>
+
+<h1 style="text-align: center; font-size: 60px" id="timer"> 11 </h1>
+
+<div id="picture_rect"></div>
+
+<script src="index.js"></script>
+
+<script>
+    function move_picture(el) {
+
+        let blueRect = document.getElementById("picture_rect"); // получаем стиль для picture_rect
+        let cs = window.getComputedStyle(blueRect);
+
+        let left = parseInt(cs.marginLeft);
+        let top = parseInt(cs.marginTop);
+
+        switch (el.key) {
+            case "ArrowLeft":  // если нажата клавиша влево
+                if (left < 30)
+                    blueRect.style.marginLeft = 0 + "px";
+                else if (left > 0)
+                    blueRect.style.marginLeft = left - 40 + "px";
+                break;
+            case "ArrowUp":   // если нажата клавиша вверх
+                if (top <= 40)
+                    blueRect.style.marginTop = 10 + "px";
+                else if (top > 10)
+                    blueRect.style.marginTop = top - 40 + "px";
+                break;
+            case "ArrowRight":   // если нажата клавиша вправо
+                if (left < 1240)
+                    blueRect.style.marginLeft = left + 40 + "px";
+                else if (left < 1270)
+                    blueRect.style.marginLeft = 1275 + "px";
+                break;
+            case "ArrowDown":   // если нажата клавиша вниз
+                if (top < 250)
+                    blueRect.style.marginTop = top + 40 + "px";
+                break;
+            case "Enter":   // если нажата клавиша энтер
+                if (first_time_used) {
+                    use_set_interval();
+                    first_time_used = false;
+                }
+                document.getElementById("button1").innerHTML = on_click_button(this);
+                set_seconds(11);
+                break;
+            case " ":   // если нажата клавиша пробел
+                if (first_time_used) {
+                    use_set_interval();
+                    first_time_used = false;
+                }
+                document.getElementById("button1").innerHTML = on_click_button(this);
+                set_seconds(11);
+                break;
+        }
+    }
+
+    addEventListener("keydown", move_picture);
+
+</script>
+
+</body>
+
+</html>
