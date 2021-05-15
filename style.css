@@ -1,0 +1,27 @@
+body {
+    background: #90efd0;
+    background-size: 100%;
+    color: #000000;
+    overflow: hidden;
+}
+
+h2 {
+    border: 4px double black;
+    background: #fc3;
+    padding: 10px;
+}
+
+p {
+    border: 4px double black;
+    background: #fc3;
+    padding: 10px;
+}
+
+button {
+    height: 50px;
+    display: block;
+    position: relative;
+    border: 1px solid white;
+    margin: 0 auto;
+    background: #ffcc33;
+}

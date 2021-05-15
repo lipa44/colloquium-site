@@ -5,9 +5,7 @@
     <title>Коллоквиум</title>
 
     <script>
-        let seconds;
-        let first_time_used = true;
-        let x;
+        let seconds, first_time_used = true, x;
 
         function set_seconds(new_s) {
             seconds = new_s;
@@ -30,9 +28,7 @@
             }, 1000);
         }
 
-        function stop_timer() {
-            clearInterval(x);
-        }
+        function stop_timer() { clearInterval(x); }
 
     </script>
 
@@ -40,56 +36,45 @@
 
 <body>
 
-<style>
-
-    #picture_rect {
-        width: 100px;
-        height: 100px;
-        background-size: 100px 100px;
-        background-image: url("квадрат.png");
-    }
-
-    body {
-        background: #90efd0;
-        background-size: 100%; /* Современные браузеры */
-        color: #000000;
-        overflow: hidden;
-    }
-
-    h2 {
-        border: 4px double black; /* Параметры границы */
-        background: #fc3; /* Цвет фона */
-        padding: 10px; /* Поля вокруг текста */
-    }
-
-    p {
-        border: 4px double black; /* Параметры границы */
-        background: #fc3; /* Цвет фона */
-        padding: 10px; /* Поля вокруг текста */
-    }
-
-    button {
-        height: 50px;
-        display: block;
-        position: relative;
-        border: 1px solid white;
-        margin: 0 auto;
-        background: #ffcc33;
-    }
-
-</style>
-
 <h2 style=" text-align: center; font-size: 60px; font-family: 'Comic Sans MS',monospace">Коллоквиум №4</h2>
 
 <p style=" text-align: center; font-size: 40px; font-family: 'Comic Sans MS',monospace" id="button1"> Можешь рискнуть,
     если смелый)</p>
 
-<button style=" text-align: center; border-radius: 10px; border: 10px; font-size: 25px; margin-left: auto;" type="button"
+<button style=" text-align: center; border-radius: 10px; border: 10px; font-size: 25px; margin-left: auto;"
+        type="button"
         onclick='document.getElementById("button1").innerHTML = on_click_button(); set_seconds(11); if (first_time_used) {use_set_interval(); first_time_used = false;}'>
     Следующий вопрос
 </button>
 
 <h1 style="text-align: center; font-size: 60px" id="timer"> 11 </h1>
+
+<script>
+    function hot_keys(el) {
+
+        switch (el.key) {
+            case "Enter":   // если нажата клавиша энтер
+                if (first_time_used) {
+                    use_set_interval();
+                    first_time_used = false;
+                }
+                document.getElementById("button1").innerHTML = on_click_button(this);
+                set_seconds(11);
+                break;
+            case " ":   // если нажата клавиша пробел
+                if (first_time_used) {
+                    use_set_interval();
+                    first_time_used = false;
+                }
+                document.getElementById("button1").innerHTML = on_click_button(this);
+                set_seconds(11);
+                break;
+        }
+    }
+
+    addEventListener("keydown", hot_keys);
+
+</script>
 
 <script src="index.js"></script>
 
