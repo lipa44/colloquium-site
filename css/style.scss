@@ -1,5 +1,5 @@
 body {
-  background: #90efd0;
+  background-color: #81d4fa;
   background-size: 100%;
   color: #000000;
   overflow: hidden;
@@ -26,25 +26,17 @@ button {
 #timer {
   text-align: center;
   font-size: 60px;
-  margin-bottom: 100px;
-}
-
-body {
-  background-color: #81d4fa;
-}
-
-#next_question_button {
-  border-radius: 10px;
-  border: 10px;
-  font-size: 25px;
-  margin-left: auto;
+  display: inline-block;
+  width: 100%;
 }
 
 .btn {
   border-radius: 10px;
   border: 10px;
   font-size: 25px;
-  margin-left: auto;
+  position: absolute;
+  transform: translateX(50%);
+  display: inline-block;
 }
 
 .btn:link,
@@ -52,10 +44,10 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   padding: 15px 40px;
-  display: inline-block;
   border-radius: 100px;
   transition: all .2s;
   position: absolute;
+  display: inline-block;
 }
 
 .btn:hover {
@@ -70,7 +62,7 @@ body {
 
 .btn-white {
   background-color: #fc3;
-  color: #777;
+  color: black;
 }
 
 .btn::after {

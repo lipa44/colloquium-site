@@ -1,6 +1,6 @@
 body {
-    background-color: #81d4fa;
-    background-size: 100%;
+  background-color: #81d4fa;
+  background-size: 100%;
   color: #000000;
   overflow: hidden; }
 
@@ -22,28 +22,26 @@ button {
 #timer {
   text-align: center;
   font-size: 60px;
-  margin-bottom: 100px; }
-
-#next_question_button {
-  border-radius: 10px;
-  border: 10px;
-  font-size: 25px;
-  margin-left: auto; }
+  display: inline-block;
+  width: 100%; }
 
 .btn {
   border-radius: 10px;
   border: 10px;
-  font-size: 25px; }
+  font-size: 25px;
+  position: absolute;
+  transform: translateX(50%);
+  display: inline-block; }
 
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 15px 40px;
-  display: inline-block;
   border-radius: 100px;
   transition: all .2s;
-  position: absolute; }
+  position: absolute;
+  display: inline-block; }
 
 .btn:hover {
   transform: translateY(-3px);

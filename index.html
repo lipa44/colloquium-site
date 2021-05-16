@@ -44,15 +44,14 @@
 <p style=" text-align: center; font-size: 40px; font-family: 'Comic Sans MS',monospace" id="button1"> Можешь рискнуть,
     если смелый)</p>
 
-<div style=" display: inline-block; width: 100%; height: 100px; text-align: center;">
-    <a href="#"
-       onclick='
+<a href="#"
+   onclick='
        document.getElementById("button1").innerHTML = on_click_button();
        set_seconds(11);
        if (first_time_used) {use_set_interval(); first_time_used = false;}'
 
-       class="btn btn-white btn- animate">Следующий вопрос</a>
-</div>
+   class="btn btn-white btn- animate">Следующий вопрос</a>
+
 
 <h1 id="timer"> 11 </h1>
 
