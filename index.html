@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Коллоквиум</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
 
     <script>
         let seconds, first_time_used = true, x;
@@ -28,7 +29,9 @@
             }, 1000);
         }
 
-        function stop_timer() { clearInterval(x); }
+        function stop_timer() {
+            clearInterval(x);
+        }
 
     </script>
 
@@ -41,40 +44,19 @@
 <p style=" text-align: center; font-size: 40px; font-family: 'Comic Sans MS',monospace" id="button1"> Можешь рискнуть,
     если смелый)</p>
 
-<button style=" text-align: center; border-radius: 10px; border: 10px; font-size: 25px; margin-left: auto;"
-        type="button"
-        onclick='document.getElementById("button1").innerHTML = on_click_button(); set_seconds(11); if (first_time_used) {use_set_interval(); first_time_used = false;}'>
-    Следующий вопрос
-</button>
+<div style=" display: inline-block; width: 100%; height: 100px; text-align: center;">
+    <a href="#"
+       onclick='
+       document.getElementById("button1").innerHTML = on_click_button();
+       set_seconds(11);
+       if (first_time_used) {use_set_interval(); first_time_used = false;}'
 
-<h1 style="text-align: center; font-size: 60px" id="timer"> 11 </h1>
+       class="btn btn-white btn- animate">Следующий вопрос</a>
+</div>
 
-<script>
-    function hot_keys(el) {
+<h1 id="timer"> 11 </h1>
 
-        switch (el.key) {
-            case "Enter":   // если нажата клавиша энтер
-                if (first_time_used) {
-                    use_set_interval();
-                    first_time_used = false;
-                }
-                document.getElementById("button1").innerHTML = on_click_button(this);
-                set_seconds(11);
-                break;
-            case " ":   // если нажата клавиша пробел
-                if (first_time_used) {
-                    use_set_interval();
-                    first_time_used = false;
-                }
-                document.getElementById("button1").innerHTML = on_click_button(this);
-                set_seconds(11);
-                break;
-        }
-    }
-
-    addEventListener("keydown", hot_keys);
-
-</script>
+<script src="hotkeys.js"></script>
 
 <script src="index.js"></script>
 
