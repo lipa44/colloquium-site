@@ -29,55 +29,12 @@ function on_click_button() {
             first_time_used = true;
             return "Ну что, ещё по одной?";
         } else {
+            stop_timer();
             alert("Не очень-то и хотелось");
             i = 0;
             is_again = true;
             first_time_used = true;
             return "Вопросов нема";
         }
-    }
-}
-
-function move_picture(el) {
-
-    let blueRect = document.getElementById("picture_rect"); // получаем стиль для picture_rect
-    let cs = window.getComputedStyle(blueRect);
-
-    let left = parseInt(cs.marginLeft);
-    let top = parseInt(cs.marginTop);
-
-    switch (el.key) {
-        case "ArrowLeft":  // если нажата клавиша влево
-            if (left >= 40)
-                blueRect.style.marginLeft = left - 40 + "px";
-            break;
-        case "ArrowUp":   // если нажата клавиша вверх
-            if (top >= -510)
-                blueRect.style.marginTop = top - 40 + "px";
-            break;
-        case "ArrowRight":   // если нажата клавиша вправо
-            if (left < window.innerWidth * 9 / 10)
-                blueRect.style.marginLeft = left + 40 + "px";
-            break;
-        case "ArrowDown":   // если нажата клавиша вниз
-            if (top <= 190)
-                blueRect.style.marginTop = top + 40 + "px";
-            break;
-        case "Enter":   // если нажата клавиша энтер
-            if (first_time_used) {
-                use_set_interval();
-                first_time_used = false;
-            }
-            document.getElementById("button1").innerHTML = on_click_button();
-            set_seconds(11);
-            break;
-        case " ":   // если нажата клавиша пробел
-            if (first_time_used) {
-                use_set_interval();
-                first_time_used = false;
-            }
-            document.getElementById("button1").innerHTML = on_click_button();
-            set_seconds(11);
-            break;
     }
 }

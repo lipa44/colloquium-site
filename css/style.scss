@@ -5,6 +5,28 @@ body {
   overflow: hidden;
 }
 
+#title {
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Comic Sans MS', monospace
+}
+
+#button1 {
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Comic Sans MS', monospace
+}
+
+.documentation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  text-align: left;
+  margin: 15px;
+  color: #515151;
+}
+
 .Lipa_inc {
   position: absolute;
   bottom: 0;

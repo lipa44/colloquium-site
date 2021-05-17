@@ -2,9 +2,9 @@
   "name": "first_project",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "js/index.js",
   "scripts": {
-    "start": "node index.js index.html"
+    "start": "node js/index.js index.html"
   },
   "keywords": [],
   "author": "",
