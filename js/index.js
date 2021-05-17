@@ -10,8 +10,7 @@ const questions = ["Дерево (2 определения)", "Граф блок
     ]
 ;
 
-let i = 0;
-let is_again = true;
+let questions_counter = 0, is_again = true;
 
 function on_click_button() {
     if (is_again) {
@@ -19,19 +18,19 @@ function on_click_button() {
         is_again = false;
     }
 
-    if (i < questions.length)
-        return (i + 1) + ") " + questions[i++];
+    if (questions_counter < questions.length)
+        return (questions_counter + 1) + ") " + questions[questions_counter++];
     else {
-        is_again = confirm("Вопросы закончились, хочешь заново?");
         stop_timer();
+        is_again = confirm("Вопросы закончились, хочешь заново?");
         if (is_again) {
-            i = 0;
+            questions_counter = 0;
             first_time_used = true;
             return "Ну что, ещё по одной?";
         } else {
             stop_timer();
             alert("Не очень-то и хотелось");
-            i = 0;
+            questions_counter = 0;
             is_again = true;
             first_time_used = true;
             return "Вопросов нема";
