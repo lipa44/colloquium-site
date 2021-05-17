@@ -1,4 +1,4 @@
-function hot_keys(el) {
+function hotkeys(el) {
 
     switch (el.code) {
         case "13": // Enter
@@ -19,4 +19,4 @@ function set_next_question() {
     set_seconds(10);
 }
 
-addEventListener("keydown", hot_keys);
+addEventListener("keydown", hotkeys);
