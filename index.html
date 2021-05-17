@@ -44,17 +44,19 @@
 <p style=" text-align: center; font-size: 40px; font-family: 'Comic Sans MS',monospace" id="button1"> Можешь рискнуть,
     если смелый)</p>
 
-<a href="#"
-   onclick='
+<div>
+    <button
+            onclick='
        document.getElementById("button1").innerHTML = on_click_button();
        set_seconds(11);
        if (first_time_used) {use_set_interval(); first_time_used = false;}'
 
-   class="btn btn-white btn- animate">Следующий вопрос</a>
+            class="btn btn-white btn- animate">Следующий вопрос
+    </button>
 
 
-<h1 id="timer"> 11 </h1>
-
+    <h1 id="timer"> 11 </h1>
+</div>
 <script src="hotkeys.js"></script>
 
 <script src="index.js"></script>
