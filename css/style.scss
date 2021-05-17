@@ -5,6 +5,16 @@ body {
   overflow: hidden;
 }
 
+.Lipa_inc {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: fit-content;
+  text-align: right;
+  margin: 10px;
+  background-color: #b2dcef;
+}
+
 h2 {
   border: 4px double black;
   background: #fc3;
