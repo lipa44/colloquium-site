@@ -16,7 +16,7 @@ function set_next_question() {
         first_time_used = false;
     }
     document.getElementById("button1").innerHTML = on_click_button(this);
-    set_seconds(11);
+    set_seconds(10);
 }
 
 addEventListener("keydown", hot_keys);

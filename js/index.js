@@ -13,27 +13,31 @@ const questions = ["Дерево (2 определения)", "Граф блок
 let questions_counter = 0, is_again = true;
 
 function on_click_button() {
+    if (questions_counter === 40) {
+        stop_timer();
+        is_again = true;
+        questions_counter = 0;
+        document.getElementById("questions_button").innerHTML = "Ещё раз!"
+        return "Вопросов больше нет";
+    }
+    document.getElementById("questions_button").innerHTML = "Следующий вопрос";
+
     if (is_again) {
         questions.sort(() => Math.random() - 0.5);
         is_again = false;
+        questions_counter = -1;
+        first_time_used = true;
+        set_seconds(10);
+        document.getElementById("button1").innerHTML = on_click_button();
     }
 
     if (questions_counter < questions.length)
         return (questions_counter + 1) + ") " + questions[questions_counter++];
     else {
-        stop_timer();
-        is_again = confirm("Вопросы закончились, хочешь заново?");
-        if (is_again) {
-            questions_counter = 0;
-            first_time_used = true;
-            return "Ну что, ещё по одной?";
-        } else {
-            stop_timer();
-            alert("Не очень-то и хотелось");
-            questions_counter = 0;
-            is_again = true;
-            first_time_used = true;
-            return "Вопросов нема";
-        }
+        document.getElementById("questions_button").innerHTML = "Ещё раз!"
+        questions_counter = 0;
+        first_time_used = true;
+        set_seconds(0);
+        return "Хуй";
     }
 }

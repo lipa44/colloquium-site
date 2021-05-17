@@ -13,7 +13,7 @@ function use_set_interval() {
 
         if (seconds <= 0) {
             document.getElementById("button1").innerHTML = "Отчёт на почту, следующая.";
-            seconds = 11;
+            seconds = 10;
         } else {
             seconds--;
             document.getElementById("timer").innerHTML = seconds;
