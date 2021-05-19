@@ -14,10 +14,11 @@ let questions_counter = 0, is_again = true;
 
 function on_click_button() {
     if (questions_counter === 40) {
+        console.log(questions_counter);
+        questions_counter = 41;
         stop_timer();
         is_again = true;
-        questions_counter = 0;
-        document.getElementById("questions_button").innerHTML = "Ещё раз!"
+        document.getElementById("questions_button").innerHTML = "Ещё раз!";
         return "Вопросов больше нет";
     }
     document.getElementById("questions_button").innerHTML = "Следующий вопрос";
@@ -38,6 +39,5 @@ function on_click_button() {
         questions_counter = 0;
         first_time_used = true;
         set_seconds(0);
-        return "Хуй";
     }
 }
