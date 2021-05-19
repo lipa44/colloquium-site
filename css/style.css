@@ -49,8 +49,7 @@ p {
   font-size: 60px;
   display: inline-block;
   width: 100%;
-  top: 18rem;
-  position: relative; }
+  margin: auto; }
 
 button {
   background: #ffcc33;
