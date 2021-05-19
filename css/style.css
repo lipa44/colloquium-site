@@ -59,7 +59,8 @@ p {
   font-size: 60px;
   display: inline-block;
   width: 100%;
-  margin: auto; }
+  margin: auto;
+  font-family: "Comic Sans MS", monospace; }
 
 button {
   background: #ffcc33;

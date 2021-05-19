@@ -12,7 +12,10 @@ function use_set_interval() {
         document.getElementById("timer").innerHTML = seconds;
 
         if (seconds <= 0) {
+            stop_timer();
+
             document.getElementById("button1").innerHTML = "Отчёт на почту, следующая.";
+            document.getElementById("timer").innerHTML = "Время вышло";
             seconds = 10;
         } else {
             seconds--;

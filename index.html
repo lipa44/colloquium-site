@@ -30,8 +30,10 @@
 <div id="button_div">
     <button id="questions_button" onclick='
        document.getElementById("button1").innerHTML = on_click_button();
+       stop_timer();
        set_seconds(10);
-       if (first_time_used) {use_set_interval(); first_time_used = false;}'
+       use_set_interval();
+       if (first_time_used) { first_time_used = false;}'
 
             class="btn btn-white btn- animate">Погнали
     </button>
